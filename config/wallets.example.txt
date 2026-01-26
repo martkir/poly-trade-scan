@@ -1,0 +1,8 @@
+# Wallet addresses to track (one per line)
+# Copy this file to wallets.txt and add your wallet addresses
+#
+# Example:
+# 0x1234567890abcdef1234567890abcdef12345678
+# 0xabcdef1234567890abcdef1234567890abcdef12
+#
+# Leave empty or delete wallets.txt to track ALL Polymarket trades
