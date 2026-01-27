@@ -4,6 +4,8 @@ Track Polymarket trades in real-time by listening to Polygon blocks via WebSocke
 
 Unlike polling-based approaches, WebSocket block streaming provides lower latency. And unlike the Polymarket API which requires polling each wallet separately, decoding blocks directly scales to any number of wallets.
 
+![poly-trade-scan demo](assets/exmple.gif)
+
 ## Setup
 
 ### Create Virtual Environment
