@@ -46,14 +46,26 @@ def on_trade(trade) -> None:
         f"https://polygonscan.com/address/{trade.wallet}",
         trade.wallet[:10] + "...",
     )
+
+    # Calculate human-readable amounts
     is_buy = trade.side == 0
+    if is_buy:
+        usdc = trade.maker_amount / 1_000_000
+        tokens = trade.taker_amount / 1_000_000
+    else:
+        usdc = trade.taker_amount / 1_000_000
+        tokens = trade.maker_amount / 1_000_000
+
+    price = usdc / tokens if tokens > 0 else 0
     side = colored("BUY", "GREEN") if is_buy else colored("SELL", "RED")
+
     log.info(
         "Trade",
         wallet=wallet_link,
         side=side,
-        maker_amount=trade.maker_amount,
-        taker_amount=trade.taker_amount,
+        tokens=f"{tokens:.0f}",
+        price=f"${price:.3f}",
+        total=f"${usdc:.2f}",
         tx=tx_link,
     )
 
