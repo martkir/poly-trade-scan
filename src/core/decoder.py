@@ -40,8 +40,8 @@ class TransactionDecoder:
             decoded = decode(MATCH_ORDERS_ABI_TYPES, input_bytes[4:])
 
             return self._extract_orders(decoded)
-        except Exception as e:
-            log.warning("Decode failed", error=str(e))
+        except Exception:
+            # Expected for non-Polymarket transactions with same selector
             return None
 
     def _extract_orders(self, decoded: tuple) -> list[DecodedOrder]:

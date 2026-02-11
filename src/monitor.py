@@ -1,4 +1,5 @@
-"""Trade monitor orchestrator."""
+"""Real-time trade monitor via WebSocket."""
+
 import asyncio
 from typing import Any, Callable, Optional
 

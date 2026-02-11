@@ -18,3 +18,8 @@ POLYGON_WSS_URL = os.environ["POLYGON_WSS_URL"]
 
 # Default path for wallets file
 DEFAULT_WALLETS_FILE = CONFIG_DIR / "wallets.txt"
+
+# RPC retry settings
+RPC_MAX_RETRIES = 3
+RPC_RETRY_DELAY_SECONDS = 1.0
+RPC_TIMEOUT_SECONDS = 2

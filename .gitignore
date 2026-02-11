@@ -1,7 +1,9 @@
 tests
 CLAUDE.md
 NOTES.md
+.vscode
 .claude
+docs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
