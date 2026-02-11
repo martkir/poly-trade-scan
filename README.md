@@ -18,6 +18,7 @@ Unlike polling-based approaches, WebSocket block streaming provides lower latenc
   - [Listen to Real-Time Trades](#listen-to-real-time-trades)
   - [Download Historical Trades](#download-historical-trades)
   - [Timeouts & Retries](#timeouts--retries)
+- [Feedback & Contact](#feedback--contact)
 
 ## Setup
 
@@ -141,3 +142,15 @@ poly download -b 100 --max-rps 100
 Each RPC request has a 1-second timeout. Not all RPC providers return HTTP 429 when rate limited — some simply hang indefinitely. A healthy RPC should never take more than 1 second to return a block or receipts, so a timeout is a reliable signal that something is wrong.
 
 Failed requests are retried up to 3 times with a short delay between attempts. If a request still fails after all retries, the download aborts immediately. A healthy endpoint operating within its rate limit should never need more than 3 attempts — persistent failures indicate a deeper issue (bad endpoint, network problems, or rate limit misconfiguration).
+
+## Feedback & Contact
+
+If you have any questions, ideas on how to extend the code, or suggestions for new features, I'd love to hear them.
+
+If you're working on something similar (prediction markets, trading infrastructure, backtesting systems, data pipelines, etc.) and need help, want to collaborate, or just want to exchange ideas, feel free to reach out.
+
+You can message me on Twitter: [@martkiro_](https://twitter.com/martkiro)
+Or email me directly at: [martinvkirov@gmail.com](mailto:martinvkirov@gmail.com)
+
+And if nothing else, just say hi 🙂
+
