@@ -10,6 +10,7 @@ class FormattedTrade:
     """Human-readable trade data."""
 
     wallet: str
+    token_id: str
     side: str  # "BUY" or "SELL"
     tokens: float
     price: float
@@ -40,6 +41,7 @@ def format_trade(trade: TradeData) -> FormattedTrade:
 
     return FormattedTrade(
         wallet=trade.wallet,
+        token_id=trade.token_id,
         side="BUY" if is_buy else "SELL",
         tokens=tokens,
         price=price,

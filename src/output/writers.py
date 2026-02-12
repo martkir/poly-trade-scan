@@ -25,6 +25,7 @@ def write_stdout(trade: FormattedTrade) -> None:
     log.info(
         "Trade",
         wallet=wallet_link,
+        token_id=trade.token_id[:20],
         side=side,
         tokens=f"{trade.tokens:.0f}",
         price=f"${trade.price:.3f}",
@@ -38,6 +39,7 @@ CSV_FIELDNAMES = [
     "timestamp",
     "tx_hash",
     "wallet",
+    "token_id",
     "side",
     "tokens",
     "price",
@@ -52,6 +54,7 @@ def _trade_to_dict(trade: FormattedTrade) -> dict:
         "timestamp": trade.timestamp,
         "tx_hash": trade.tx_hash,
         "wallet": trade.wallet,
+        "token_id": trade.token_id,
         "side": trade.side,
         "tokens": trade.tokens,
         "price": trade.price,
